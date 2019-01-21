@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/projects/badgecheckout/css/sytle.css">
+    <meta charset="UTF-8">
+    <title>Badge Check In/Check Out</title>
+
+</head>
+<body>
+    <h1>Badge Check Out</h1>
+    <div>
+<!--The form is only dealing with client side JS, so I set the action to void so that it would not submit the page to anything. All the interaction is from event listeners-->
+        <form action="javascript:void(0);">
+            <label>Name:</label> <input id="nameTyped" type="text">
+            <br><br>
+            <label>Badge Type:</label> <input id="badgeTyped" type="text">
+            <br><br>
+            <label>Badge Number:</label> <input id="badgeNumTyped" type="text">
+                <br><br>
+            <input id="checkIn" type="submit" value="Click to Check In!">
+        </form>
+           <div style="margin-left: 75%">
+               <button type="button" id="exportToCsv">Click to Export to .csv File</button>
+               <br><br>
+                <div class="dropdown">
+                <button id="dropbtn" class="dropbtn">Sort Table Options</button>
+                <div id="myDropdown" class="dropdown-content">
+                <a id="firstNameSortClick">By First Name</a>
+                <a id="badgeTypeSortClick">By Badge Type</a>
+                <a id="badgeNumberSortClick">By Badge Number</a>
+                <a id="timeCheckedOutSortClick">By Time Checked Out</a>
+                <a id="timeReturnedSortClick">By Time Returned</a>
+                </div>
+                </div>
+           </div>
+    </div>
+    
+    
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Badge Type</th> 
+                    <th>Badge Number</th>
+                    <th>Time Checked Out</th>
+                    <th>Return</th>
+                </tr>
+            </thead>
+            <tbody id="checkedIn">
+                <tr>
+                    <td>Tom Test</td>
+                    <td>Temporary</td> 
+                    <td>50</td>
+                    <td>17:05:01</td>
+                    <td><input type="button" id="return1" value="Click to Return Badge" class="tableButton"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+    <script src="/projects/badgecheckout/scripts/script.js"></script>
+</html>
