@@ -39,7 +39,7 @@ section h4 {
     text-align: center;
 }
 section > div:nth-child(2), section div:nth-child(3), section div:nth-child(4) {
-    width: 270px;
+    width: 29%;
     min-height: 410px;
     float: left;
     border: 1px solid black;
@@ -56,9 +56,9 @@ section p:first-of-type, section p:last-of-type {
     clear: both;
     /* align-self: flex-start; */
 }
-section > p:last-of-type {
-    /* align-self: flex-end; */
-}
+/* section > p:last-of-type {
+    align-self: flex-end;
+} */
 .logo {
     position: fixed;
     /* float: left; */
@@ -137,14 +137,17 @@ footer {
     left: 0;
     background: #000;
     width: 100%;
-    height: 92px;
-    line-height: 60px;
+    height: 60px;
+    line-height: 45px;
     min-width: 840px;
-    /* display: flex;
-    justify-content: center; */
-    /* transition: 1s; */
+}
+footer ul {
+    display: flex;
+    justify-content: center;
+    text-align: center; 
 }
 footer hr, footer ul li, footer a {
+    line-height: 1em;
     margin: 5px 10px 5px 10px;
     color: #fff;
 }
@@ -160,13 +163,19 @@ footer hr, footer ul li, footer a {
 }
 @media(max-width: 930px){
     section > div:nth-child(2), section > div:nth-child(3), section > div:nth-child(4) {
-        width: 95%;
+        width: 97%;
         text-align: center;
         padding: 0 10px 0 10px;
         margin: 10px auto 10px auto;
     }
 }
 @media(max-width: 800px) {
+    section > div:nth-child(2), section > div:nth-child(3), section > div:nth-child(4) {
+        width: 95%;
+        text-align: center;
+        padding: 0 10px 0 10px;
+        margin: 10px auto 10px auto;
+    }
     main {
         border-radius: 10px;
     }
