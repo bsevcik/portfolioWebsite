@@ -16,7 +16,9 @@ header {
 main {
     clear:both;
     width: 90%;
+    /* min-width: 480px; */
     max-width: 960px;
+    min-height: 135px;
     margin: 4em auto;
     font-size: 20px;
     line-height: 30px;
@@ -38,16 +40,23 @@ section > p {
 section h4 {
     text-align: center;
 }
-section > div:nth-child(2), section div:nth-child(3), section div:nth-child(4) {
+.cardContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+}
+.card {
     width: 29%;
     min-height: 410px;
-    float: left;
     border: 1px solid black;
     border-radius: 10px;
     padding: 0 9px 0 9px;
     margin: 0 10px 10px 10px;
-    /* justify-self: center; */
+    /* display: flex; */
 }
+/* .card h4:nth-child(2) {
+    align-self: flex-end;
+} */
 section p:first-of-type, section p:last-of-type {
     width: 100%;
     text-align: center;
@@ -94,7 +103,7 @@ nav ul, footer ul {
     padding: 0;
     text-align: right;
     margin: 0;
-    padding-right: 40px;
+    /* padding-right: 40px; */
     transition: 1s;
 }
 nav > div.menu > ul > li:nth-child(1) {
@@ -141,41 +150,17 @@ footer {
     line-height: 45px;
     min-width: 840px;
 }
-footer ul {
+/* footer ul {
     display: flex;
     justify-content: center;
     text-align: center; 
-}
+} */
 footer hr, footer ul li, footer a {
     line-height: 1em;
     margin: 5px 10px 5px 10px;
     color: #fff;
 }
-@media(max-width: 1075px) {
-    section div:nth-child(2), section div:nth-child(3) {
-        width: 45%;
-        float: left;
-    }
-    section div:nth-child(4) {
-        clear: both;
-        width: 95%;
-    }
-}
-@media(max-width: 930px){
-    section > div:nth-child(2), section > div:nth-child(3), section > div:nth-child(4) {
-        width: 97%;
-        text-align: center;
-        padding: 0 10px 0 10px;
-        margin: 10px auto 10px auto;
-    }
-}
-@media(max-width: 800px) {
-    section > div:nth-child(2), section > div:nth-child(3), section > div:nth-child(4) {
-        width: 95%;
-        text-align: center;
-        padding: 0 10px 0 10px;
-        margin: 10px auto 10px auto;
-    }
+@media(max-width: 768px) {
     main {
         border-radius: 10px;
     }
@@ -223,5 +208,17 @@ footer hr, footer ul li, footer a {
     }
     .slidecontent {
         margin-top: 350px;
+    }
+}
+@media(max-width: 630px) {
+    main {
+        width: 95%;
+    }
+    .cardContainer {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .card {
+        width: 90%;
     }
 }
