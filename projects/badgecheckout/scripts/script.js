@@ -4,7 +4,7 @@
 // This array stores all the inputted data. Is gets output as a table body when running function displayArray()
 var checkedInArray = [];
 
-            
+
 //This function is meant to clear the table after the form is submitted. It wasn't reliable when using tableRow.length, so I set it to delete as many items as are in the array. The form data is pushed to the array before clearTable() is run
 function clearTable() {
     "use strict";
@@ -51,7 +51,7 @@ document.getElementById("checkIn").addEventListener("click",
             document.getElementById("badgeNumTyped").value = "";
             document.getElementById("nameTyped").focus();
         }
-        
+
     }
 );
 
@@ -78,21 +78,19 @@ function returnBadge(r) {
 
 
 
-document.getElementById("dropbtn").addEventListener("click",
-    function () {document.getElementById("myDropdown").classList.toggle("show");
-})
-
-
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-document.getElementsByClassName("dropbtn").addEventListener("click", function () {
+/* When the user clicks on the button, toggle between hiding and showing the dropdown content */
+document.getElementById("dropbtn").addEventListener("click", function () {
     document.getElementById("myDropdown").classList.toggle("show");
 })
+
+// using getElementsByClassName() seemed to break it, so I took it out
+// document.getElementsByClassName("dropbtn").addEventListener("click", function () {
+//     document.getElementById("myDropdown").classList.toggle("show");
+// })
 
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function(event) {
     if (!event.target.matches('.dropbtn')) {
-        
         var dropdowns = document.getElementsByClassName("dropdown-content");
         var i;
         for (i = 0; i < dropdowns.length; i++) {
@@ -120,7 +118,7 @@ window.onclick = function(event) {
 
 function exportToCsv() {
     var time = new Date();
-    var dateNow = time.getMonth() + "-" + time.getDate() + "-" + time.getFullYear();    
+    var dateNow = time.getMonth() + "-" + time.getDate() + "-" + time.getFullYear();
     var csvString = "";
     checkedInArray.forEach(function(RowItem, RowIndex) {
         RowItem.forEach(function(ColItem, ColIndex) {
@@ -140,17 +138,17 @@ document.getElementById("exportToCsv").addEventListener("click", exportToCsv);
 
 
 // This sorts checkedInArray alphabetically by First name
-document.getElementById("firstNameSortClick").addEventListener("click",
+$(".firstNameSortClick").on("click",
 //document.getElementById("nameButton").addEventListener("click",
     function nameSort() {
         checkedInArray.sort();
         clearTable();
         displayArray();
+        console.log("did it");
     })
-                                           
 
 // This sorts checkedInArray alphabetically by Badge Type
-document.getElementById("badgeTypeSortClick").addEventListener("click", function badgeTypeSort () {
+$(".badgeTypeSortClick").on("click", function badgeTypeSort () {
     checkedInArray.sort(compareSecondColumn);
     function compareSecondColumn(a, b) {
         if (a[1] === b[1]) {
@@ -164,7 +162,7 @@ document.getElementById("badgeTypeSortClick").addEventListener("click", function
 }
 )
 // This sorts checkedInArray alphabetically by Badge Number
-document.getElementById("badgeNumberSortClick").addEventListener("click", function badgeTypeSort () {
+$(".badgeNumberSortClick").on("click", function badgeTypeSort () {
     checkedInArray.sort(compareThirdColumn);
     function compareThirdColumn(a, b) {
         if (a[2] === b[2]) {
@@ -178,7 +176,7 @@ document.getElementById("badgeNumberSortClick").addEventListener("click", functi
 }
 )
 // This sorts checkedInArray in chronological order of when checked out
-document.getElementById("timeCheckedOutSortClick").addEventListener("click", function badgeTypeSort () {
+$(".timeCheckedOutSortClick").on("click", function badgeTypeSort () {
     checkedInArray.sort(compareFourthColumn);
     function compareFourthColumn(a, b) {
         if (a[3] === b[3]) {
@@ -192,7 +190,7 @@ document.getElementById("timeCheckedOutSortClick").addEventListener("click", fun
 }
 )
 // This sorts checkedInArray in chronological order of when returned
-document.getElementById("timeReturnedSortClick").addEventListener("click", function badgeTypeSort () {
+$(".timeReturnedSortClick").on("click", function badgeTypeSort () {
     checkedInArray.sort(compareFifthColumn);
     function compareFifthColumn(a, b) {
         if (a[4] === b[4]) {

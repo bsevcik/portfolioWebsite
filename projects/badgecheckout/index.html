@@ -1,63 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="/projects/badgecheckout/css/sytle.css">
+<!-- Scripts -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+<link rel="stylesheet" href="/index.css">
+<link rel="stylesheet" type="text/css" href="/projects/badgecheckout/css/sytle.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="/index.js"></script>
+<!-- meta tags -->
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Include fontawesome for the 3 line icon for the menu when screen is small-->
+<!-- title -->
     <title>Badge Check In/Check Out</title>
-
 </head>
+
 <body>
-    <h1>Badge Check Out</h1>
-    <div>
-<!--The form is only dealing with client side JS, so I set the action to void so that it would not submit the page to anything. All the interaction is from event listeners-->
-        <form action="javascript:void(0);">
-            <label>Name:</label> <input id="nameTyped" type="text">
-            <br><br>
-            <label>Badge Type:</label> <input id="badgeTyped" type="text">
-            <br><br>
-            <label>Badge Number:</label> <input id="badgeNumTyped" type="text">
-                <br><br>
-            <input id="checkIn" type="submit" value="Click to Check In!">
-        </form>
-           <div style="margin-left: 75%">
-               <button type="button" id="exportToCsv">Click to Export to .csv File</button>
-               <br><br>
-                <div class="dropdown">
-                <button id="dropbtn" class="dropbtn">Sort Table Options</button>
-                <div id="myDropdown" class="dropdown-content">
-                <a id="firstNameSortClick">By First Name</a>
-                <a id="badgeTypeSortClick">By Badge Type</a>
-                <a id="badgeNumberSortClick">By Badge Number</a>
-                <a id="timeCheckedOutSortClick">By Time Checked Out</a>
-                <a id="timeReturnedSortClick">By Time Returned</a>
+        <div class="wrapper">
+            <header>
+            <nav class="navbar">
+                <div class="menu-icon">
+                    <i class="fa fa-bars fa-2x"></i>
                 </div>
+                <ul>
+                    <a href="/index.html" class="logo"><img src="/assets/logos/IBlogo.jpeg">
+                    </a>
+                </ul>
+                <div class="menu">
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/projects/">Projects</a></li>
+                        <li><a class="nav-link disabled" href="/aboutme/">About</a></li>
+                        <li><a class="nav-link disabled" href="/blog/">Blog</a></li>
+                        <li><a class="nav-link disabled" href="/contact/">Contact</a></li>
+                    </ul>
                 </div>
-           </div>
-    </div>
-    
-    
-    <div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Badge Type</th> 
-                    <th>Badge Number</th>
-                    <th>Time Checked Out</th>
-                    <th>Return</th>
-                </tr>
-            </thead>
-            <tbody id="checkedIn">
-                <tr>
-                    <td>Tom Test</td>
-                    <td>Temporary</td> 
-                    <td>50</td>
-                    <td>17:05:01</td>
-                    <td><input type="button" id="return1" value="Click to Return Badge" class="tableButton"></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</body>
-    <script src="/projects/badgecheckout/scripts/script.js"></script>
-</html>
+            </nav>
+            </header>
+    <main>
+        <section>
+                <h1>Badge Check Out</h1>
+                <div>
+            <!--The form is only dealing with client side JS, so I set the action to void so that it would not submit the page to anything. All the interaction is from event listeners-->
+                    <form action="javascript:void(0);">
+                        <label>Name:</label> <input id="nameTyped" type="text">
+                        <br>
+                        <label>Badge Type:</label> <input id="badgeTyped" type="text">
+                        <br>
+                        <label>Badge Number:</label> <input id="badgeNumTyped" type="text">
+                            <br>
+                        <input id="checkIn" type="submit" value="Click to Check In!">
+                    </form>
+                       <div class="dropdiv">
+                           <button type="button" id="exportToCsv">Click to Export to .csv File</button>
+                           <br><br>
+                            <div class="dropdown">
+                            <button id="dropbtn" class="dropbtn">Sort Table Options</button>
+                            <div id="myDropdown" class="dropdown-content">
+                            <a class="firstNameSortClick">By First Name</a>
+                            <a class="badgeTypeSortClick">By Badge Type</a>
+                            <a class="badgeNumberSortClick">By Badge Number</a>
+                            <a class="timeCheckedOutSortClick">By Time Checked Out</a>
+                            <a class="timeReturnedSortClick">By Time Returned</a>
+                            </div>
+                            </div>
+                       </div>
+                </div>
+                
+                
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="firstNameSortClick">Name &#x25BC;</th>
+                                <th class="badgeTypeSortClick">Badge Type &#x25BC;</th> 
+                                <th class="badgeNumberSortClick">Badge Number &#x25BC;</th>
+                                <th class="timeCheckedOutSortClick">Time Checked Out &#x25BC;</th>
+                                <th class="timeReturnedSortClick">Return &#x25BC;</th>
+                            </tr>
+                        </thead>
+                        <tbody id="checkedIn">
+                            <tr>
+                                <td>Tom Test</td>
+                                <td>Temporary</td> 
+                                <td>50</td>
+                                <td>17:05:01</td>
+                                <td><input type="button" id="return1" value="Click to Return Badge" class="tableButton"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <script src="/projects/badgecheckout/scripts/script.js"></script>
+        </section>
+    </main>
+        </div>
+    </body>
+    <footer>
+        <hr>
+        <ul>
+            <li>
+                <a id="emailMe" href="mailto:bensevcik+webdev@gmail.com">Email Me</a> 
+            </li>
+            <li>
+                <a id ="mapMe" href="https://www.google.com/maps/place/San+Diego,+CA/@32.606528,-117.2295819,9.5z/data=!4m5!3m4!1s0x80d9530fad921e4b:0xd3a21fdfd15df79!8m2!3d32.715738!4d-117.1610838">Location</a>
+            </li>
+            <li>
+                <a id="githubMe" href="https://www.github.com/bsevcik">Github</a>
+            </li>
+            <li>
+                <a id="linkedInMe" href="https://www.linkedin.com/in/ben-sevcik-3a6634139/">LinkedIn</a>
+            </li>
+        </ul>    
+    </footer>
+    </html>

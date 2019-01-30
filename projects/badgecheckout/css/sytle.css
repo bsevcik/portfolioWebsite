@@ -1,33 +1,38 @@
 h1 {
-    width: 100%;
-    margin-left: 40px;
+    padding: 40px;
 }
 label {
     display: inline-block;
-    /* float: left; */
-    clear: left;
-    width: 110px;
-    text-align: right;
+    width: 160px;
+    text-align: left;
 }
 input {
     display: inline-block;
-    /* float: right; */
 }
 
 #checkIn {
     text-align: center;
-    width: 163px;
-    margin-left: 110px;
+    width: 173px;
+    margin-left: 165px;
 }
-
+#exportToCsv {
+    text-align: center;
+    width: 173px;
+    margin-left: 165px;
+}
 table {
     width: 100%;
 }
 
 th {
-    text-align: left;
+    text-align: center;
 }
-
+th:hover {
+    color: red;
+}
+th:active {
+    color: white;
+}
 tr, td {
     border: 1px solid;
 }
@@ -35,7 +40,9 @@ tr, td {
 .tableButton {
     width: 100%;
 }
-
+.dropdiv {
+    height: 30px;
+}
 /* Dropdown Button */
 .dropbtn {
     background-color: #3498DB;
@@ -44,6 +51,7 @@ tr, td {
     font-size: 16px;
     border: none;
     cursor: pointer;
+    display: none;
 }
 
 /* Dropdown button on hover & focus */
