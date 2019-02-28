@@ -6,7 +6,7 @@ html, body {
 body {
     font-family: "Helvetica Neue",sans-serif;
     font-weight: lighter;
-    background: url(/assets/images/naturepic.jpg) no-repeat 50% 50%;
+    background: url(/assets/images/naturepic.jpg) repeat-y 50% 50%;
 }
 header {
     width: 100%;
@@ -54,16 +54,33 @@ section h4 {
     margin: 0 10px 10px 10px;
     /* display: flex; */
 }
+/* .card:hover {
+    background: #bebebe;
+} */
+.card img {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+/* .space-between {
+    display: flex;
+    align-items: space-between;
+} */
 /* .card h4:nth-child(2) {
     align-self: flex-end;
 } */
-section p:first-of-type, section p:last-of-type {
+.pCenter {
     width: 100%;
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
     clear: both;
     /* align-self: flex-start; */
+}
+.card > p {
+   text-align: left;
 }
 /* section > p:last-of-type {
     align-self: flex-end;
@@ -210,7 +227,7 @@ footer hr, footer ul li, footer a {
         margin-top: 350px;
     }
 }
-@media(max-width: 630px) {
+@media(max-width: 740px) {
     main {
         width: 95%;
     }
@@ -220,5 +237,9 @@ footer hr, footer ul li, footer a {
     }
     .card {
         width: 90%;
+    }
+    .card img {
+        /* width: 100%; */
+        height: auto;
     }
 }

@@ -1,0 +1,38 @@
+body {
+    background: lightgray;
+}
+nav {
+    background: black;
+}
+.center {
+    text-align: center;
+}
+/*
+input {
+    margin: 50px 0 0 0;
+}    
+*/
+td {
+    padding: 0 10px 0 0;
+}
+th {
+    text-align: left;
+}
+th, td {
+    border-bottom: 1px solid #ddd;
+}
+table {
+    margin: 10px auto;
+    border: 1px solid black;
+}
+/*
+tr:nth-child(even) {
+    background: #CCC;
+}*/
+ul {
+    margin-top: 0;
+}
+h1 {
+    margin: 0;
+    padding-top: 15px;
+}

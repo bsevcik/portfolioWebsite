@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135177424-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-135177424-1');
+    </script>
+    <meta charset="UTF-8">
+    <title>NCAA Tournament Site Predictor</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href=/index.css>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="menu-icon">
+                <i class="fa fa-bars fa-2x"></i>
+            </div>
+            <ul>
+                <a href="/index.html" class="logo"><img src="/assets/logos/IBlogo.jpeg">
+                </a>
+            </ul>
+            <div class="menu">
+                <ul>
+                    <li><a class="nav-link disabled" href="/aboutme/">About</a></li>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a class="nav-link disabled" href="/blog/">Blog</a></li>
+                    <li><a href="/projects/">Projects</a></li>
+                    <li><a class="nav-link disabled" href="/contact/">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+<main>
+<section>
+           <h1 class="center">What if Net Ranking and Geography were all that mattered?</h1>
+                <p>
+                    The NCAA basketball tournament has eight 1st/2nd round sites, and each site has two "pods" which may feed into any regional site. The best teams are given sites based on what is geographically close. Once each site has been filled by two top teams no other top 16 team can be placed there. Also, top teams potential 2nd round matchups are placed into the same site. <br><br>
+                    
+                    I have taken the straight line distance from home gym to potential 1st/2nd round gym of every team in the top 32 of the Net Rankings (as of 2/26/19) and written this page to show the closest site still available for the top 16 teams. Teams ranked 17-32 are then assumed to match up in the second round with the top 16 evenly. For example #1 vs #32, and #16 vs #17.<br><br> 
+                    Click the button to find out how the sites might change as teams move up or down the rankings. <!--<br><br>Using this tool I found that Iowa State must pass Michigan, Purdue, Wisconsin, and LSU to get Des Moines. But Iowa State would also be helped by Virginia or Kentucky falling down the rankings.-->
+                </p>
+    <div class="center">
+<!--
+        <input type="text" id="currentRank" value="Current Rank"><br>
+        <input type="text" id="newRank" value="Potential Rank"><br>
+-->
+        <input type='button' id='changeIsuRank' value='Change a Ranking' onclick="isuRank()"> <br>
+    </div>
+               
+</section>
+
+<div id="table">
+    <!--Added in the table even though it immediately gets overwritten. This way it looks good when the page loads and doesn't push any text down awkwardly while the js table loads-->
+    <table id="siteTable"><tbody><tr><th>Rank</th><th>Team</th><th>Site</th><th>Distance (Miles)</th></tr><tr><td>1</td><td>Gonzaga</td><td>Salt Lake City, UT</td><td>549.11</td></tr><tr><td>2</td><td>Virginia</td><td>Columbus, OH</td><td>275.98</td></tr><tr><td>3</td><td>Duke</td><td>Colombia, SC</td><td>182.44</td></tr><tr><td>4</td><td>Houston</td><td>Tulsa, OK</td><td>446.23</td></tr><tr><td>5</td><td>Kentucky</td><td>Columbus, OH</td><td>155.23</td></tr><tr><td>6</td><td>Michigan St</td><td>Des Moines, IA</td><td>474.36</td></tr><tr><td>7</td><td>Tennessee</td><td>Colombia, SC</td><td>212.36</td></tr><tr><td>8</td><td>North Carolina</td><td>Jacksonville, FL</td><td>413.92</td></tr><tr><td>9</td><td>Michigan</td><td>Des Moines, IA</td><td>509.98</td></tr><tr><td>10</td><td>Texas Tech</td><td>Tulsa, OK</td><td>378.58</td></tr><tr><td>11</td><td>Purdue</td><td>Hartford, CT</td><td>747.03</td></tr><tr><td>12</td><td>Virginia Tech</td><td>Jacksonville, FL</td><td>482.23</td></tr><tr><td>13</td><td>Wisconsin</td><td>Hartford, CT</td><td>857.08</td></tr><tr><td>14</td><td>Iowa State</td><td>Salt Lake City, UT</td><td>949.97</td></tr><tr><td>15</td><td>LSU</td><td>San Jose, CA</td><td>1818.99</td></tr><tr><td>16</td><td>Buffalo</td><td>San Jose, CA</td><td>2287.3</td></tr><tr><td>17</td><td>Kansas</td><td>San Jose, CA</td><td>1448.88</td></tr><tr><td>18</td><td>Marquette</td><td>San Jose, CA</td><td>1825.54</td></tr><tr><td>19</td><td>Nevada</td><td>Salt Lake City, UT</td><td>426.9</td></tr><tr><td>20</td><td>Wofford</td><td>Hartford, CT</td><td>687.55</td></tr><tr><td>21</td><td>Maryland</td><td>Jacksonville, FL</td><td>993.82</td></tr><tr><td>22</td><td>Louisville</td><td>Hartford, CT</td><td>733.2</td></tr><tr><td>23</td><td>Auburn</td><td>Tulsa, OK</td><td>647.51</td></tr><tr><td>24</td><td>Mississippi St</td><td>Des Moines, IA</td><td>621.39</td></tr><tr><td>25</td><td>Cincinnati</td><td>Jacksonville, FL</td><td>630.44</td></tr><tr><td>26</td><td>Florida St</td><td>Colombia, SC</td><td>310.91</td></tr><tr><td>27</td><td>Kansas St</td><td>Des Moines, IA</td><td>227.81</td></tr><tr><td>28</td><td>Villanova</td><td>Columbus, OH</td><td>406.42</td></tr><tr><td>29</td><td>Washington</td><td>Tulsa, OK</td><td>1559.24</td></tr><tr><td>30</td><td>Iowa</td><td>Colombia, SC</td><td>780.92</td></tr><tr><td>31</td><td>Florida</td><td>Columbus, OH</td><td>714.8</td></tr><tr><td>32</td><td>NC State</td><td>Salt Lake City, UT</td><td>1822.62</td></tr></tbody></table>
+</div>
+<section>
+<!--            <p>
+                When reading  I saw three notable indications of potential first round site changes away from the true seeds:
+            </p>
+            <ul>
+                <li>"The committee shall not place teams seeded on the first four lines at a potential 'home-crowd disadvantage' in the first round."</li>
+                <li>"Teams will remain in or as close to their areas of natural interest as possible. A team moved out of its natural area will be placed in the next closest region to the extent possible." </li>
+                <li>"If possible, after examining the previous two years’ brackets, teams or conferences will not be moved out of its natural region or geographic area an inordinate number of times"</li>
+            </ul>-->
+                <div class="center">
+            <blockquote></blockquote>
+            <blockquote></blockquote>
+            <blockquote>  </blockquote>
+            </div>
+               Sources:
+               <ul>
+                   <li>Straight line distances from <a href="https://batchgeo.com/map/3bc01ae2f06d845fcf1bdb4b4c08e0bf"> batchgeo.com</a>
+                   <ul>
+                       <li>Driving distances vary</li>
+                       <li>These calculations are straight line paths, not great circle paths. Basically this means the curvature of the earth isn't accounted for so the distances listed are shorter than the true land distance.</li>
+                   </ul>
+                    </li>
+                   <li><a href="https://www.ncaa.com/rankings/basketball-men/d1/ncaa-mens-basketball-net-rankings">NCAA Net Rankings</a><br></li>
+                   <li>NCAA guide for <a href="https://www.ncaa.com/news/basketball-men/article/2018-10-19/how-field-68-teams-picked-march-madness">How the Field of 68 teams is picked for March Madness</a></li>
+                   <li>
+                       <a href="https://github.com/bsevcik/NCAA_First_Round_Sites">Source Code</a> for this Project
+                   </li>
+               </ul>
+        </section>
+</main>
+<footer>
+    <hr>
+    <ul>
+        <li>
+            <a id="emailMe" href="mailto:contact@bensevcik.com">Email Me</a>
+        <li>
+            <a id ="mapMe" href="https://www.google.com/maps/place/San+Diego,+CA/@32.606528,-117.2295819,9.5z/data=!4m5!3m4!1s0x80d9530fad921e4b:0xd3a21fdfd15df79!8m2!3d32.715738!4d-117.1610838">Location</a>
+        </li>
+        <li>
+            <a id="githubMe" href="https://www.github.com/bsevcik">Github</a>
+        </li>
+        <li>
+            <a id="linkedInMe" href="https://www.linkedin.com/in/ben-sevcik-3a6634139/">LinkedIn</a>
+        </li>
+    </ul>    
+</footer>
+
+    <script src="/index.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+    <script src="pushData.js"></script>
+</body>
+</html>

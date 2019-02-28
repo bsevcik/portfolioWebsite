@@ -1,0 +1,164 @@
+
+/* FOOTER */
+.greybar                    {width:100%;height:90px;background:#F5F6F6;clear:both;padding-top:30px;}
+footer                      {width:100%;height:120px;background:#30353D;text-align:center;color:#FFF;padding-top:50px;}
+
+.social-media               {margin:0 auto;width:165px;}
+.social-media div           {float:left;margin-right:5px;}
+.social-media a             {display:block;width:36px;height:36px;text-indent:-9999px;}
+.social-media div.one       {background:url('../images/social-media.png') 0 0;}
+.social-media div.two 	    {background:url('../images/social-media.png') -38px 0;}
+.social-media div.three     {background:url('../images/social-media.png') -76px 0;}
+.social-media div.four 	    {background:url('../images/social-media.png') -114px 0;}
+
+#responsive-menu {
+    margin-bottom: 50px;
+}
+/* MEDIA QUERIES */
+/*Break points are 480, 768, and 1024*/
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    main, figure, section, body section, #content, #products {
+        width: 100%
+    }
+    figure {
+        background-size: 373px;
+        background-position: center; 
+        max-height: auto;
+        height: 140px;
+    }
+    nav {
+        width:540px;
+        height:190px;
+        float: none;
+        text-align: center;
+        margin: 0 auto;
+    }
+    nav ul{
+        list-style-type: none;
+        margin-top: 0px;
+    }
+    ul li a {
+        font-size: 1.25em;
+    }
+}
+
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    figure, section, body section, #content, #products {
+        width: 100%
+    }
+    main {
+        width: 95%;
+        margin: 0 auto;
+    }
+    figure {
+        background-size: 373px;
+        background-position: center; 
+        max-height: auto;
+        height: 140px;
+    }
+    nav {
+        width:470px;
+        height:190px;
+        float: none;
+        text-align: center;
+        margin: 0 auto;
+    }
+    nav ul{
+        list-style-type: none;
+        margin: 0px;
+    }
+    nav li {
+        margin: 0;
+    }
+    ul li a {
+        font-size: 1em;
+    }
+    #content #testimonials {
+        float: none;
+        margin: 0 20px 0 20px;
+        width: 90%;
+    }
+    #content #products {
+        margin: 0 20px;
+        float: none;
+        width: 90%;
+    }
+    header {
+        width: 90%;
+        margin: 0 auto;
+    }
+    header h1 {
+        font-size: 1.9em;
+        margin-top: 2em;  
+    }
+    header h3 {
+        font-size: 1.5em;
+    }
+}
+
+/*Hide the client testimonials, second product from the featured products section, and the light grey bar when the view is in mobile portrait mode. 
+
+Everything here is solid except the mobileMenu */
+@media screen and (max-width: 479px) {
+     main, nav, figure, section, body section, #content, #products {
+        width: 100%
+    }
+
+    
+    nav {
+        display: none;
+    }
+    .mobileMenu {
+        display: block;
+    }
+
+    figure {
+        background-size: 81.08% auto;
+/*        margin: 0 10px 0 0px;*/
+        width: 100%;
+        background-position: center; 
+    }
+ 
+    main, #testimonials, aside, .greybar, #featuredProduct2, #products > article:nth-child(2) > img {
+        display: none;
+    }
+    section {
+        display: none;
+    }
+    #content #products {
+        width: 100%;
+        clear: both;
+    }
+    #products, #headline {
+        padding: 0 10px;
+    }
+    #products h3 {
+        font-size: 1.5em;
+    }
+    header {
+        font-size: 16px;
+        margin: 0 10px;
+    }
+    header h1 {
+        font-size: 1.5em
+    }
+    header h2 {
+        font-size: 1em;
+    }
+    header h3 {
+        font-size: 1em;
+    }
+    header p {
+        font-size: 1em;
+    }
+    #headline > h1 {
+        font-size: 1.5em;
+        padding-top: 32px;
+    }
+    footer {
+        clear: both;
+    }
+    nav ul li a   		{font-size: 90%;}
+    h1 {font-size: 70%;}
+}    

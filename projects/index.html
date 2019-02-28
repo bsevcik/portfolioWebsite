@@ -2,12 +2,18 @@
 <html>
 
 <head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135177424-1"></script>
+    <script>window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-135177424-1');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ben Sevcik's Website</title>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<!--Include fontawesome for the 3 line icon for the menu when screen is small-->
+    <!--Include fontawesome for the hamburger icon for the menu when screen is small-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <script src="/index.js"></script>
     <link rel="stylesheet" href="/index.css">
@@ -27,10 +33,10 @@
             </ul>
             <div class="menu">
                 <ul>
-                    <li><a href="/index.html">Home</a></li>
-                    <li><a href="/projects/">Projects</a></li>
                     <li><a class="nav-link disabled" href="/aboutme/">About</a></li>
+                    <li><a href="/index.html">Home</a></li>
                     <li><a class="nav-link disabled" href="/blog/">Blog</a></li>
+                    <li><a href="/projects/">Projects</a></li>
                     <li><a class="nav-link disabled" href="/contact/">Contact</a></li>
                 </ul>
             </div>
@@ -38,27 +44,41 @@
         </header>
 <main>
     <section>
-        <p>
+        <p class="pCenter">
         Hi I'm Ben and I'm a website developer. Some of my projects are listed below.
         </p>
         <div class="cardContainer">
             <div class="card">
-                <h4><a href="/projects/badgecheckout">Check in/Check Out</a></h4>
-                <p>This was my first project done entirely on my own. It's a web app that lets the user monitor when something has been taken and returned. It's entirely front end, but the user can download the data into a .csv file to persist data. The data is sortable by clicking on table headers.</p>
+                <a href="/projects/ncaa/NCAA_First_Round_Sites/index.html"><h4>NCAA Site Predictor</h4>
+                    <img src="/assets/images/ncaageography.png">
+                </a>
+                <p>The NCAA basketball tournament releases the locations of games less than one week before the tournament begins. Using the NCAA Net Rankings this program predicts where top teams will be placed, and has an interactive feature for fans to see different possible scenarios.</p>
+                <h4>Technologies Used</h4>
+                <p>HTML, CSS, JavaScript, jQuery, nodeJS</p>
+            </div>    
+            <div class="card">
+                <a href="/projects/ncaa/index.html"><h4>NCAA Scoreboard</h4>
+                    <img src="/assets/images/ncaabballscores.png">
+                </a>
+                <p>This scrapes the NCAA website for live basketball scores without the heavy footprint that other score projects have. It's great for checking scores while in a low data area.</p>
+                <h4>Technologies Used</h4>
+                <p>HTML, CSS, JavaScript, jQuery, nodeJS</p>
+            </div>    
+            <div class="card">
+                <a href="/projects/coatcheck/"><h4>Coat Check</h4>
+                    <img src="/assets/images/checkinpic2.png">
+                </a>
+                <p>This is a web app that lets the user keep track of a coat check. It's entirely front end, but the user can download the data into a .csv file to persist data. The data is sortable by clicking on table headers.</p>
                 <h4>Technologies Used</h4>
                 <p>HTML5, CSS, JavaScript, jQuery</p>
             </div>    
             <div class="card">
-                <h4><a href="/projects/vectacorp/">Vecta Corp</a></h4>
-                <p></p>
+                <a href="/projects/vecta_responsive/"><h4>Vecta Corp</h4>
+                    <img src="/assets/images/vecta_responsive.png">                
+                </a>
+                <p>Vecta Corp is a fictional company used for projects in the Front End Web Developer Certificate program through the San Diego Community College District. This is an example of a responsive website home page. </p>
                 <h4>Technologies Used</h4>
-                <p></p>
-            </div>
-            <div class="card">
-                    <h4><a href="/projects/cardmatchinggame">Card Matching Game</a></h4>
-                    <p></p>
-                    <h4>Technologies Used</h4>
-                    <p></p>
+                <p>Skeleton framework, CSS media queries</p>
             </div>
         </div>
     </section>
@@ -69,7 +89,7 @@
     <hr>
     <ul>
         <li>
-            <a id="emailMe" href="mailto:bensevcik+webdev@gmail.com">Email Me</a> 
+                <a id="emailMe" href="mailto:contact@bensevcik.com">Email Me</a>
         </li>
         <li>
             <a id ="mapMe" href="https://www.google.com/maps/place/San+Diego,+CA/@32.606528,-117.2295819,9.5z/data=!4m5!3m4!1s0x80d9530fad921e4b:0xd3a21fdfd15df79!8m2!3d32.715738!4d-117.1610838">Location</a>

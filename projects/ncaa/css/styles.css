@@ -1,0 +1,137 @@
+main {
+    line-height: 16px;
+}
+h1 {
+    line-height: 40px;
+    text-align: center;
+}
+nav{
+    line-height: 90px;
+}
+.game {
+    border: 1px solid black;
+    border-radius: 8px;
+    width: 225px;
+    padding: 10px;
+    margin: 10px auto;
+    min-height: 70px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main ul {
+    list-style: none;
+    margin: 0 0 0 0;
+    padding: 0;
+    width: 100%;
+}
+main ul, main li {
+    list-style: none;
+    margin: 0 5px 0 0;
+    padding: 0;
+/*    width: 100%;*/
+}
+hr {
+    margin: 2px 0 6px 0;
+/*    padding-top: 10px;*/
+}
+.gameStatus {
+    height: 16px;
+}
+.homeTeam li, .awayTeam li, .gameStatus li {
+/*    width: 45%;*/
+    display: inline-flex;
+}
+.awayRank, .homeRank {
+    width: 16px;
+}
+.tipTime, .gameState {
+    margin-left: 21px;
+    width: 138px;
+}
+.awayTeamName, .homeTeamName, .tipTime {
+    justify-content: space-between;
+    width: 165px;
+    margin-right: auto;
+    padding-left: 5px;
+}
+.awayTeamScore, .homeTeamScore, .clock {
+    /* align-items: flex-end; */
+    /* justify-content: flex-end;  */
+    
+/*    margin-left: auto;*/
+    text-align: right;
+}
+.winner {
+    font-weight: 700;
+}
+.noWrap {
+    flex-wrap: nowrap;
+}
+.wrap {
+    flex-wrap: wrap;
+}
+.bracketConnect1 {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    border-left: none;
+    /* float: left; */
+}
+/* <div class="gameStatus">final</div>
+<div class="awayTeam">C CONN</div>
+<div class="awayTeamScore">85</div>
+<div class="homeTeam">STFRPA</div>
+<div class="homeTeamScore">90</div> */
+/* 
+.gamePod .gamePod-game-teams li {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    vertical-align: top;
+}
+.gamePod .gamePod-game-teams {
+    display: block;
+    clear: both;
+    list-style-type: none;
+    margin: 13px 0 2px 0;
+    padding: 0;
+}
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+.gamePod, .gamePod a.gamePod-link {
+    color: #000;
+}
+a {
+    text-decoration: none;
+    color: #0A6FAC;
+}
+
+.gamePod, .gamePod a.gamePod-link {
+    color: #000;
+}
+body {
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+html {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #000;
+}
+html {
+    line-height: 1.15;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+} */
