@@ -3,7 +3,13 @@
 
 // This array stores all the inputted data. Is gets output as a table body when running function displayArray()
 var checkedInArray = [];
+window.onload = function () { 
+    if (JSON.parse(localStorage.getItem("checkedInArrayLocal")) != null) {
+        checkedInArray = JSON.parse(localStorage.getItem("checkedInArrayLocal"));
+        displayArray();
 
+    }
+}
 
 //This function is meant to clear the table after the form is submitted. It wasn't reliable when using tableRow.length, so I set it to delete as many items as are in the array. The form data is pushed to the array before clearTable() is run
 function clearTable() {
@@ -20,6 +26,8 @@ function displayArray() {
     for (clearTable(); i < checkedInArray.length; i++) {
         document.getElementById("checkedIn").innerHTML += "<tr><td>" + checkedInArray[i][0] + "</td> <td>" + checkedInArray[i][1] + "</td> <td>" + checkedInArray[i][2] + "</td><td>" + checkedInArray[i][3] + "</td><td>" + checkedInArray[i][4] + "</td></tr>";
     }
+    var writeLocal = JSON.stringify(checkedInArray);
+    localStorage.setItem("checkedInArrayLocal", writeLocal);
 }
 
 /*This part of the code simply wrote the user typed data into a table, but did not write it to an array. It is now deprecated.
@@ -28,7 +36,7 @@ function displayArray() {
 
 //This function validates that something was typed into all three input boxes, capitolizes the first letter of writes all the data typed in by the user to checkedInArray[], runs clearTable() to clear the table, and then runs displayArray() to write a the updated array into the table body
 document.getElementById("checkIn").addEventListener("click",
-    function () {
+    function update() {
         "use strict";
         var time = new Date();
         var timeNow = time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
@@ -73,6 +81,9 @@ function returnBadge(r) {
 //
 //    optionally call the function to export data to Csv. It was annoying so I turned it off.
 //    exportToCsv();
+// Write new array contents to local storage
+    var writeLocal = JSON.stringify(checkedInArray);
+    localStorage.setItem("checkedInArrayLocal", writeLocal);
 }
 
 
