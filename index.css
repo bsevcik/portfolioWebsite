@@ -37,8 +37,15 @@ section > p {
     /* opacity: 1; */
     /* margin: 10px; */
 }
+.pproject {
+    height: 570px;
+}
+.pcardhome {
+    min-height: 180px;
+}
 section h4 {
     text-align: center;
+    height: 60px;
 }
 .cardContainer {
     display: flex;
@@ -181,6 +188,9 @@ footer hr, footer ul li, footer a {
     main {
         border-radius: 10px;
     }
+    .pcardhome {
+    min-height: auto;
+    }
     nav, footer {
         position: fixed;
         width: 100%;
@@ -237,9 +247,17 @@ footer hr, footer ul li, footer a {
     }
     .card {
         width: 90%;
+        min-height: auto;
     }
     .card img {
         /* width: 100%; */
         height: auto;
     }
+    .pproject {
+        height: auto;
+    }
+    section h4 {
+    text-align: center;
+    height: auto;
+}
 }
