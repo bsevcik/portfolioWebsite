@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135177424-1"></script>
@@ -8,14 +8,18 @@
     gtag('js', new Date());
     gtag('config', 'UA-135177424-1');</script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86"> -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Ben Sevcik's Website</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!--Include fontawesome for the hamburger icon for the menu when screen is small-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
-    <link rel='stylesheet' href="/index.css">
-    <link rel='stylesheet' href="css/styles.css">
-    <link rel="stylesheet" href="NCAA_First_Round_Sites/css/styles.css">
-  <title>NCAA Scores</title>
+    <script src="/index.js"></script>
+    <link rel="stylesheet" href="/index.css">
 </head>
+    <!--
+    -->
 <body>
     <header>
         <nav class="navbar">
@@ -33,13 +37,17 @@
                     <li><a class="nav-link disabled" href="/blog/">Blog</a></li>
                     <li><a href="/projects/">Projects</a></li>
                     <li><a class="nav-link disabled" href="/contact/">Contact</a></li>
+                    <li><a class="nav-link" href="/resume/">Resume</a></li>
                 </ul>
             </div>
         </nav>
     </header>
-<main>
-    
-</main>
+    <main>
+        <section id="resumeParent">
+            <object id="resumePDF" data='/assets/resume.pdf' type="application/pdf"></object>
+        </section>
+    </main>
+</body>
 <footer>
     <hr>
     <ul>
@@ -56,10 +64,4 @@
         </li>
     </ul>    
 </footer>
-    <!-- External Scripts/Css -->
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <!-- Internal Scripts/Css -->
-    <script src="/index.js"></script>
-    <script src="pushScores.js"></script>
-</body>
-</html>
+</html>>

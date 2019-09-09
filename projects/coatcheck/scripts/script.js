@@ -11,7 +11,7 @@ window.onload = function () {
     }
 }
 
-//This function is meant to clear the table after the form is submitted. It wasn't reliable when using tableRow.length, so I set it to delete as many items as are in the array. The form data is pushed to the array before clearTable() is run
+//This function is meant to clear the HTML table after the form is submitted. It wasn't reliable when using tableRow.length, so I set it to delete as many items as are in the array. The form data is pushed to the array before clearTable() is run
 function clearTable() {
     "use strict";
     for (var i = 0; i < checkedInArray.length; i++)
@@ -63,6 +63,19 @@ document.getElementById("checkIn").addEventListener("click",
     }
 );
 
+//Delete the array and reset the table
+document.getElementById("wipeTable").addEventListener("click", 
+    function resetAllData() {
+        var confirm = window.confirm("Are you sure you want to reset the table? \nThis will all data and is irreversible.");
+        if (confirm) {
+            clearTable();
+            checkedInArray = [];
+            localStorage.removeItem("checkedInArrayLocal");
+            displayArray();
+        }
+    }
+                                                      
+)
 function returnBadge(r) {
     var i = r.parentElement.parentElement.rowIndex - 1;
 //    window.console.log(i);

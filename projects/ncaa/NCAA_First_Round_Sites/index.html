@@ -11,6 +11,8 @@
     gtag('config', 'UA-135177424-1');
     </script>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>NCAA Tournament Site Predictor</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <link rel="stylesheet" href=/index.css>
@@ -43,15 +45,23 @@
                 <p>
                     The NCAA basketball tournament has eight 1st/2nd round sites, and each site has two "pods" which may feed into any regional site. The best teams are given sites based on what is geographically close. Once each site has been filled by two top teams no other top 16 team can be placed there. Also, top teams potential 2nd round matchups are placed into the same site. <br><br>
                     
-                    I have taken the straight line distance from home gym to potential 1st/2nd round gym of every team in the top 32 of the Net Rankings (as of 2/26/19) and written this page to show the closest site still available for the top 16 teams. Teams ranked 17-32 are then assumed to match up in the second round with the top 16 evenly. For example #1 vs #32, and #16 vs #17.<br><br> 
-                    Click the button to find out how the sites might change as teams move up or down the rankings. <!--<br><br>Using this tool I found that Iowa State must pass Michigan, Purdue, Wisconsin, and LSU to get Des Moines. But Iowa State would also be helped by Virginia or Kentucky falling down the rankings.-->
+                    I have taken the straight line distance from home gym to potential 1st/2nd round gym of every team in the top 32 of the Net Rankings (as of 3/3/19) and written this page to show the closest site still available for the top 16 teams. Teams ranked 17-32 are then assumed to match up in the second round with the top 16 evenly. For example #1 vs #32, and #16 vs #17.<br><br> 
+                    Click the button to find out how the sites might change as teams move up or down the rankings. 
+                    <p class="showMobile">
+                        The distance in miles can only be seen on desktop.
+                    </p>
+                    <!--<br><br>Using this tool I found that Iowa State must pass Michigan, Purdue, Wisconsin, and LSU to get Des Moines. But Iowa State would also be helped by Virginia or Kentucky falling down the rankings.-->
                 </p>
     <div class="center">
 <!--
         <input type="text" id="currentRank" value="Current Rank"><br>
         <input type="text" id="newRank" value="Potential Rank"><br>
 -->
-        <input type='button' id='changeIsuRank' value='Change a Ranking' onclick="isuRank()"> <br>
+    <select id="dropDown" onchange="pickRankingsSystem()">
+        <option value="0">Net Rankings</option>
+        <option value="1">Bracket Matrix</option>
+    </select>
+        <input type='button' id='changeIsuRank' value='Change a Rank' onclick="isuRank()"> <br>
     </div>
                
 </section>
@@ -76,7 +86,7 @@
             </div>
                Sources:
                <ul>
-                   <li>Straight line distances from <a href="https://batchgeo.com/map/3bc01ae2f06d845fcf1bdb4b4c08e0bf"> batchgeo.com</a>
+                   <li>Straight line distances from <a href="https://batchgeo.com/"> www.batchgeo.com</a>
                    <ul>
                        <li>Driving distances vary</li>
                        <li>These calculations are straight line paths, not great circle paths. Basically this means the curvature of the earth isn't accounted for so the distances listed are shorter than the true land distance.</li>
@@ -107,11 +117,8 @@
     </ul>    
 </footer>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="/index.js"></script>
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.js"
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous"></script>
     <script src="pushData.js"></script>
 </body>
 </html>

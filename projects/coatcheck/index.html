@@ -2,18 +2,16 @@
 <html lang="en">
 <head>
 <!-- Scripts -->
-<!--
- Global site tag (gtag.js) - Google Analytics 
+<!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135177424-1"></script>
     <script>window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'UA-135177424-1');</script>
--->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 <link rel="stylesheet" href="/index.css">
 <link rel="stylesheet" type="text/css" href="/projects/coatcheck/css/sytle.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<!--    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>-->
     <script src="/index.js"></script>
 <!-- meta tags -->
     <meta charset="UTF-8">
@@ -59,20 +57,21 @@
                         <br>
                         <label>Claim Number:</label> <input id="badgeNumTyped" type="text">
                         <br>
-                        <input id="checkIn" type="submit" value="Click to Check In!">
+                        <input id="checkIn" type="submit" value="Click to Check In!"><br>
+                        <button type="button" id="exportToCsv">Click to Export to .csv File</button><br>
+                        <button type="button" id="wipeTable">Click to Reset Table</button>
                     </form>
                        <div class="dropdiv">
-                           <button type="button" id="exportToCsv">Click to Export to .csv File</button>
                            <br><br>
                             <div class="dropdown">
-                            <button id="dropbtn" class="dropbtn">Sort Table Options</button>
-                            <div id="myDropdown" class="dropdown-content">
-                            <a class="firstNameSortClick">By First Name</a>
-                            <a class="badgeTypeSortClick">By Badge Type</a>
-                            <a class="badgeNumberSortClick">By Badge Number</a>
-                            <a class="timeCheckedOutSortClick">By Time Checked Out</a>
-                            <a class="timeReturnedSortClick">By Time Returned</a>
-                            </div>
+                                <button id="dropbtn" class="dropbtn">Sort Table Options</button>
+                                <div id="myDropdown" class="dropdown-content">
+                                    <a class="firstNameSortClick">By First Name</a>
+                                    <a class="badgeTypeSortClick">By Badge Type</a>
+                                    <a class="badgeNumberSortClick">By Badge Number</a>
+                                    <a class="timeCheckedOutSortClick">By Time Checked Out</a>
+                                <a class="timeReturnedSortClick">By Time Returned</a>
+                                </div>
                             </div>
                        </div>
                 </div>
@@ -91,14 +90,14 @@
                             </tr>
                         </thead>
                         <tbody id="checkedIn">
-                            <tr>
+<!--                            <tr>
                                 <td>Tom Test</td>
-                                <!-- <td><a href=tel:555-555-5555>555-555-5555</a></td> -->
+                                 <td><a href=tel:555-555-5555>555-555-5555</a></td> 
                                 <td>Example</td> 
                                 <td>50</td>
                                 <td>17:05:00</td>
                                 <td><input type="button" id="return1" value="Return" class="tableButton"></td>
-                            </tr>
+                            </tr>-->
                         </tbody>
                     </table>
                 </div>

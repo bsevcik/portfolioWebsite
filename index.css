@@ -37,6 +37,14 @@ section > p {
     /* opacity: 1; */
     /* margin: 10px; */
 }
+#resumeParent {
+    overflow: hidden;
+    margin: 0 0 0 0;
+}
+#resumePDF {
+    width: 100%;
+    height: 1125px;
+}
 .pproject {
     height: 570px;
 }
@@ -191,6 +199,9 @@ footer hr, footer ul li, footer a {
     .pcardhome {
     min-height: auto;
     }
+    #resumePDF {
+        height: 930px;
+    }
     nav, footer {
         position: fixed;
         width: 100%;
@@ -256,8 +267,16 @@ footer hr, footer ul li, footer a {
     .pproject {
         height: auto;
     }
+    #resumePDF {
+        height: 630px;
+    }
     section h4 {
     text-align: center;
     height: auto;
+    }
 }
+@media(max-width: 768px) {
+    #resumePDF {
+        height: 630px;
+    }
 }

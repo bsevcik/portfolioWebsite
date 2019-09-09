@@ -27,7 +27,33 @@ function removeA(arr) {
     return arr;
 }
 
-$.getJSON('data/data2-26-19.json',
+function pickRankingsSystem() {
+    var rankingSystem = document.querySelector('#dropDown').selectedIndex;
+    if (rankingSystem == 0) {
+        $.getJSON('data/data3-17-19_netRankings.json',
+            function (data) {
+                "use strict";
+                window.data = data;
+                window.console.log(data);
+                window.arrData = Object.keys(data).map((key) => [key, data[key]]);
+            //    console.log(arrData);    
+            //    return data;
+});
+    } else if (rankingSystem == 1) {
+        $.getJSON('data/data3-17-19_bracketMatrix.json',
+            function (data) {
+                "use strict";
+                window.data = data;
+                window.console.log(data);
+                window.arrData = Object.keys(data).map((key) => [key, data[key]]);
+            //    console.log(arrData);    
+            //    return data;
+        });
+    } 
+     closestDistances();
+    
+}
+$.getJSON('data/data3-17-19_netRankings.json',
     function (data) {
         "use strict";
         window.data = data;
@@ -36,6 +62,7 @@ $.getJSON('data/data2-26-19.json',
     //    console.log(arrData);    
     //    return data;
 });
+
 
 //setTimeout so that the json data loads before calling the function
 function closestDistances() {setTimeout(function() {

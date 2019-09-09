@@ -24,6 +24,7 @@ th, td {
 table {
     margin: 10px auto;
     border: 1px solid black;
+    width: 95%;
 }
 /*
 tr:nth-child(even) {
@@ -32,7 +33,27 @@ tr:nth-child(even) {
 ul {
     margin-top: 0;
 }
+.showMobile {
+    display: none;
+}
+#changeIsuRank,  #dropDown{
+    width: 250px;
+    height: 1.5em;
+    font-size: 1.5em;
+}
 h1 {
     margin: 0;
     padding-top: 15px;
+}
+@media(max-width: 768px) {
+    td {
+        font-size: 1.25em;
+    }
+    tr>td:last-of-type, tr>th:last-of-type {
+    display: none;
+    }
+    .showMobile {
+        display: block;
+    }
+}
 }
